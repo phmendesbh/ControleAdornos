@@ -11,10 +11,14 @@ namespace ControleAdornos
 {
     public partial class FrmPalavras : Form
     {
+        readonly CorRepositorio corRepositorio = new CorRepositorio();
         readonly PalavraRepositorio PalavraRepositorio = new PalavraRepositorio();
         readonly MaterialRepositorio MaterialRepositorio = new MaterialRepositorio();
         List<Palavra> lstPalavras = new List<Palavra>();
         readonly Utils Utils = new Utils();
+        private List<Cor> cores;
+
+        public string palavraSelecionada { get; private set; }
 
         public FrmPalavras()
         {
@@ -26,32 +30,27 @@ namespace ControleAdornos
             AtualizaTela();
         }
 
+        private void PreencheCombo()
+        {
+            if (cmbCores.Items.Count == 0)
+            {
+                cores = corRepositorio.Obter();
+                cmbCores.DataSource = cores;
+                cmbCores.ValueMember = "Id";
+                cmbCores.DisplayMember = "Descricao";
+            }
+        }
+
         private void AtualizaTela()
         {
             lstPalavras = PalavraRepositorio.Obter().ToList();
 
-            List<string> lista = lstPalavras.Select(palavra => palavra.Descricao).ToList();
-
-            lstBPalavras.DataSource = lista;
-
-            MontaGrafico(lista);
+            dgvPalavras.DataSource = PalavraRepositorio.Obter();
 
             txtPalavra.Text = "";
             lblTotal.Text = $"Total: {lstPalavras.Count()}";
-        }
 
-        private void MontaGrafico(List<string> palavras)
-        {
-            //// Monta gráfico
-            //var serie = chtLetras.Series["Letras"];
-
-            //chtLetras.ChartAreas[0].AxisX.Interval = 1;
-            //serie.Points.Clear();
-            //serie.Color = Color.LightPink;
-            //foreach (KeyValuePair<string, int> letra in Utils.CalculaQtdeLetras(palavras))
-            //{
-            //    serie.Points.AddXY(letra.Key, letra.Value);
-            //}
+            PreencheCombo();
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -68,7 +67,8 @@ namespace ControleAdornos
                 {
                     PalavraRepositorio.Inserir(palavra);
                     AtualizaTela();
-                } else
+                }
+                else
                 {
                     MessageBox.Show($"Não há materiais suficiente para a palavra '{palavra}'. Inclusão não realizada.", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -77,18 +77,18 @@ namespace ControleAdornos
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            var palavraSelecionada = lstBPalavras.SelectedItem.ToString();
-            if (string.IsNullOrWhiteSpace(palavraSelecionada)) return;
+            var palavraApagar = palavraSelecionada;
+            if (string.IsNullOrWhiteSpace(palavraApagar)) return;
 
-            var retorno = MessageBox.Show($"Confirma remoção da palavra '{palavraSelecionada}' ?", "Remover", MessageBoxButtons.YesNo);
+            var retorno = MessageBox.Show($"Confirma remoção da palavra '{palavraApagar}' ?", "Remover", MessageBoxButtons.YesNo);
 
             if (retorno == DialogResult.Yes)
             {
                 Palavra palavra = new Palavra(
-                    lstPalavras.Where(s => s.Descricao == palavraSelecionada).FirstOrDefault().Id,
+                    lstPalavras.Where(s => s.Descricao == palavraApagar).FirstOrDefault().Id,
                     string.Empty)
                 {
-                    DescricaoAntiga = palavraSelecionada
+                    DescricaoAntiga = palavraApagar
                 };
 
                 PalavraRepositorio.Remover(palavra);
@@ -97,20 +97,26 @@ namespace ControleAdornos
             }
         }
 
-        private void lstPalavras_DoubleClick(object sender, EventArgs e)
+        private void dgvMateriais_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtPalavra.Text = lstBPalavras.SelectedItem.ToString();
+            AtualizaObjetos();
+        }
+
+        private void AtualizaObjetos()
+        {
+            palavraSelecionada = dgvPalavras.Rows[dgvPalavras.CurrentCell.RowIndex].Cells["Descricao"].Value.ToString();
+            txtPalavra.Text = palavraSelecionada;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (lstBPalavras.SelectedItem == null || txtPalavra.Text.Trim() == string.Empty) return;
+            if (string.IsNullOrWhiteSpace(txtPalavra.Text)) return;
 
             Palavra palavra = new Palavra(
-                lstPalavras.Where(s => s.Descricao == lstBPalavras.SelectedItem.ToString()).FirstOrDefault().Id,
+                lstPalavras.Where(s => s.Descricao == palavraSelecionada).FirstOrDefault().Id,
                 txtPalavra.Text.Trim())
             {
-                DescricaoAntiga = lstBPalavras.SelectedItem.ToString()
+                DescricaoAntiga = palavraSelecionada
             };
 
             var retorno = MessageBox.Show($"Confirma alteração da palavra '{palavra.DescricaoAntiga}' para '{palavra.Descricao}'? Isso irá alterar o estoque de letras.", "Alterar", MessageBoxButtons.YesNo);
@@ -120,6 +126,15 @@ namespace ControleAdornos
                 PalavraRepositorio.Alterar(palavra);
                 MaterialRepositorio.AtualizaEstoqueLetras(palavra);
                 AtualizaTela();
+            }
+        }
+
+        private void cmbCores_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cores != null && cmbCores.Items.Count > 0)
+            {
+                var cor = (int)cores.Where(w => w.Id == (int)cmbCores.SelectedValue).Select(s => s.ValorARBG).FirstOrDefault();
+                pnlCor.BackColor = Color.FromArgb(cor);
             }
         }
     }
