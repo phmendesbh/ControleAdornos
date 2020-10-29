@@ -1,0 +1,6 @@
+C:\Repositorio\MVP-ControleDeLetras\ComponenteCor\obj\Debug\netcoreapp3.1\ComponenteCor.csprojAssemblyReference.cache
+C:\Repositorio\MVP-ControleDeLetras\ComponenteCor\obj\Debug\netcoreapp3.1\ComponenteCor.UC_Cor.resources
+C:\Repositorio\MVP-ControleDeLetras\ComponenteCor\obj\Debug\netcoreapp3.1\ComponenteCor.csproj.GenerateResource.cache
+C:\Repositorio\MVP-ControleDeLetras\ComponenteCor\obj\Debug\netcoreapp3.1\ComponenteCor.AssemblyInfoInputs.cache
+C:\Repositorio\MVP-ControleDeLetras\ComponenteCor\obj\Debug\netcoreapp3.1\ComponenteCor.AssemblyInfo.cs
+C:\Repositorio\MVP-ControleDeLetras\ComponenteCor\obj\Debug\netcoreapp3.1\ComponenteCor.csproj.CoreCompileInputs.cache

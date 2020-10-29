@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icones\Cores-Ico.png" />
+    <None Remove="Icones\Icone.ico" />
+    <None Remove="Icones\Letras-Ico.png" />
+    <None Remove="Icones\Palavras-Ico.png" />
+    <None Remove="Icones\Tipo_Materiais-Ico.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Icones\Cores-Ico.png" />
+    <Content Include="Icones\Icone.ico" />
+    <Content Include="Icones\Letras-Ico.png" />
+    <Content Include="Icones\Palavras-Ico.png" />
+    <Content Include="Icones\Tipo_Materiais-Ico.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj" />
+    <ProjectReference Include="..\Repositorios\Repositorios.csproj" />
+    <ProjectReference Include="..\Util\Util.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Forms\FrmCor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FrmCor.Designer.cs">
+      <DependentUpon>FrmCor.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\FrmMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FrmMaterial.Designer.cs">
+      <DependentUpon>FrmMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\FrmPalavra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FrmPalavra.Designer.cs">
+      <DependentUpon>FrmPalavra.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\FrmTipo_Material.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FrmTipo_Material.Designer.cs">
+      <DependentUpon>FrmTipo_Material.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Forms\FrmCor.resx">
+      <DependentUpon>FrmCor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Forms\FrmMaterial.resx">
+      <DependentUpon>FrmMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Forms\FrmPalavra.resx">
+      <DependentUpon>FrmPalavra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Forms\FrmTipo_Material.resx">
+      <DependentUpon>FrmTipo_Material.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

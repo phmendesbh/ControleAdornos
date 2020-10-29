@@ -1,0 +1,110 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Queries\Cor\AlterarCor.sql" />
+    <None Remove="Queries\Cor\ApagarCor.sql" />
+    <None Remove="Queries\Cor\CriarTabelaCor.sql" />
+    <None Remove="Queries\Cor\InserirCor.sql" />
+    <None Remove="Queries\Cor\ObterCores.sql" />
+    <None Remove="Queries\Material\AlterarMaterial.sql" />
+    <None Remove="Queries\Material\AlterarQuantidadeMaterial.sql" />
+    <None Remove="Queries\Material\ApagarMaterial.sql" />
+    <None Remove="Queries\Material\CriarTabelaMaterial.sql" />
+    <None Remove="Queries\Material\InserirMaterial.sql" />
+    <None Remove="Queries\Material\ObterMateriais.sql" />
+    <None Remove="Queries\Material\ObterMaterialPorId.sql" />
+    <None Remove="Queries\Palavra\AlterarPalavra.sql" />
+    <None Remove="Queries\Palavra\ApagarPalavra.sql" />
+    <None Remove="Queries\Palavra\CriarTabelaPalavra.sql" />
+    <None Remove="Queries\Palavra\InserirPalavra.sql" />
+    <None Remove="Queries\Palavra\ObterPalavras.sql" />
+    <None Remove="Queries\TipoMaterial\AlterarTipo_Material.sql" />
+    <None Remove="Queries\TipoMaterial\ApagarTipo_Material.sql" />
+    <None Remove="Queries\TipoMaterial\CriarTabelaTipo_Material.sql" />
+    <None Remove="Queries\TipoMaterial\InserirTipo_Material.sql" />
+    <None Remove="Queries\TipoMaterial\ObterTipo_Materiais.sql" />
+    <None Remove="Queries\TipoMaterial\ObterTipo_MaterialPorId.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Queries\Cor\AlterarCor.sql" />
+    <Content Include="Queries\Cor\ApagarCor.sql" />
+    <Content Include="Queries\Cor\CriarTabelaCor.sql" />
+    <Content Include="Queries\Cor\InserirCor.sql" />
+    <Content Include="Queries\Cor\ObterCores.sql" />
+    <Content Include="Queries\Material\AlterarMaterial.sql" />
+    <Content Include="Queries\Material\AlterarQuantidadeMaterial.sql" />
+    <Content Include="Queries\Material\ApagarMaterial.sql" />
+    <Content Include="Queries\Material\CriarTabelaMaterial.sql" />
+    <Content Include="Queries\Material\InserirMaterial.sql" />
+    <Content Include="Queries\Material\ObterMateriais.sql" />
+    <Content Include="Queries\Material\ObterMaterialPorId.sql" />
+    <Content Include="Queries\Palavra\AlterarPalavra.sql" />
+    <Content Include="Queries\Palavra\ApagarPalavra.sql" />
+    <Content Include="Queries\Palavra\CriarTabelaPalavra.sql" />
+    <Content Include="Queries\Palavra\InserirPalavra.sql" />
+    <Content Include="Queries\Palavra\ObterPalavras.sql" />
+    <Content Include="Queries\TipoMaterial\AlterarTipo_Material.sql" />
+    <Content Include="Queries\TipoMaterial\ApagarTipo_Material.sql" />
+    <Content Include="Queries\TipoMaterial\CriarTabelaTipo_Material.sql" />
+    <Content Include="Queries\TipoMaterial\InserirTipo_Material.sql" />
+    <Content Include="Queries\TipoMaterial\ObterTipo_Materiais.sql" />
+    <Content Include="Queries\TipoMaterial\ObterTipo_MaterialPorId.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="3.1.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj" />
+    <ProjectReference Include="..\Util\Util.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Queries\Cor_Queries.Designer.cs">
+      <DependentUpon>Cor_Queries.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Queries\Material_Queries.Designer.cs">
+      <DependentUpon>Material_Queries.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Queries\Palavra_Queries.Designer.cs">
+      <DependentUpon>Palavra_Queries.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Queries\Tipo_Material_Queries.Designer.cs">
+      <DependentUpon>Tipo_Material_Queries.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Queries\Cor_Queries.resx">
+      <LastGenOutput>Cor_Queries.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Queries\Material_Queries.resx">
+      <LastGenOutput>Material_Queries.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Queries\Palavra_Queries.resx">
+      <LastGenOutput>Palavra_Queries.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Queries\Tipo_Material_Queries.resx">
+      <LastGenOutput>Tipo_Material_Queries.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
