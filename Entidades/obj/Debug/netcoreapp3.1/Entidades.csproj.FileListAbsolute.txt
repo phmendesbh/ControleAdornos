@@ -1,8 +1,0 @@
-C:\Repositorio\MVP-ControleDeLetras\Entidades\bin\Debug\netcoreapp3.1\Entidades.deps.json
-C:\Repositorio\MVP-ControleDeLetras\Entidades\bin\Debug\netcoreapp3.1\Entidades.dll
-C:\Repositorio\MVP-ControleDeLetras\Entidades\bin\Debug\netcoreapp3.1\Entidades.pdb
-C:\Repositorio\MVP-ControleDeLetras\Entidades\obj\Debug\netcoreapp3.1\Entidades.AssemblyInfoInputs.cache
-C:\Repositorio\MVP-ControleDeLetras\Entidades\obj\Debug\netcoreapp3.1\Entidades.AssemblyInfo.cs
-C:\Repositorio\MVP-ControleDeLetras\Entidades\obj\Debug\netcoreapp3.1\Entidades.csproj.CoreCompileInputs.cache
-C:\Repositorio\MVP-ControleDeLetras\Entidades\obj\Debug\netcoreapp3.1\Entidades.dll
-C:\Repositorio\MVP-ControleDeLetras\Entidades\obj\Debug\netcoreapp3.1\Entidades.pdb

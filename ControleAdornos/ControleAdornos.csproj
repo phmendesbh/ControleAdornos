@@ -59,6 +59,9 @@
     <Compile Update="Forms\FrmTipo_Material.Designer.cs">
       <DependentUpon>FrmTipo_Material.cs</DependentUpon>
     </Compile>
+    <Compile Update="UC_Cor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <EmbeddedResource Update="Forms\FrmCor.resx">
       <DependentUpon>FrmCor.cs</DependentUpon>
     </EmbeddedResource>

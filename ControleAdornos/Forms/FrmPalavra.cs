@@ -42,16 +42,16 @@ namespace ControleAdornos
 
         private void MontaGrafico(List<string> palavras)
         {
-            // Monta gráfico
-            var serie = chtLetras.Series["Letras"];
+            //// Monta gráfico
+            //var serie = chtLetras.Series["Letras"];
 
-            chtLetras.ChartAreas[0].AxisX.Interval = 1;
-            serie.Points.Clear();
-            serie.Color = Color.LightPink;
-            foreach (KeyValuePair<string, int> letra in Utils.CalculaQtdeLetras(palavras))
-            {
-                serie.Points.AddXY(letra.Key, letra.Value);
-            }
+            //chtLetras.ChartAreas[0].AxisX.Interval = 1;
+            //serie.Points.Clear();
+            //serie.Color = Color.LightPink;
+            //foreach (KeyValuePair<string, int> letra in Utils.CalculaQtdeLetras(palavras))
+            //{
+            //    serie.Points.AddXY(letra.Key, letra.Value);
+            //}
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)

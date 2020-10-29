@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleAdornos.Repositorios;
+using System;
 using System.Windows.Forms;
 
 namespace ControleAdornos.Forms
@@ -10,7 +11,7 @@ namespace ControleAdornos.Forms
             InitializeComponent();
 
 #if DEBUG
-            Repositorio.RepositorioMontaDados montaDados = new Repositorio.RepositorioMontaDados();
+            RepositorioMontaDados montaDados = new RepositorioMontaDados();
 #endif
         }
 
