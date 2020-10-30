@@ -53,7 +53,7 @@ namespace ControleAdornos.Repositorios
                         Descricao = letra.ToString(),
                         Tipo_Material_Id = 1,
                         Cor_Id = 1,
-                        Quantidade = 0
+                        Quantidade = 50
                     });
                 }
             }
