@@ -39,7 +39,7 @@ namespace ControleAdornos.Util
                     }
                     else
                     {
-                        letrasQtde.Add(letra.ToString(), 1);
+                        if(!string.IsNullOrEmpty(letra.ToString().Trim())) letrasQtde.Add(letra.ToString(), 1);
                     }
                 }
             });
