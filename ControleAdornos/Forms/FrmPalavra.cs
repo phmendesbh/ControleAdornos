@@ -17,6 +17,7 @@ namespace ControleAdornos
         List<Palavra> lstPalavras = new List<Palavra>();
         readonly Utils Utils = new Utils();
         private List<Cor> cores;
+        private List<Label> lstLabels;
 
         public string palavraSelecionada { get; private set; }
 
@@ -44,13 +45,29 @@ namespace ControleAdornos
         private void AtualizaTela()
         {
             lstPalavras = PalavraRepositorio.Obter().ToList();
+            List<string> lista = lstPalavras.Select(palavra => palavra.Descricao).ToList();
 
             dgvPalavras.DataSource = PalavraRepositorio.Obter();
+            dgvPalavras.Columns["Id"].Visible = false;
+            dgvPalavras.Columns["DescricaoAntiga"].Visible = false;
+
 
             txtPalavra.Text = "";
             lblTotal.Text = $"Total: {lstPalavras.Count()}";
 
             PreencheCombo();
+            AtualizaContagemLetras(lista);
+        }
+
+        private void AtualizaContagemLetras(List<string> palavras)
+        {
+            MontaListaLetras();
+
+            // Monta indicadores
+            foreach (KeyValuePair<string, int> letra in Utils.CalculaQtdeLetras(palavras))
+            {
+                lstLabels.FirstOrDefault(lbl => lbl.Name.Substring(lbl.Name.Length - 1) == letra.Key).Text = letra.Value.ToString();
+            }
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -137,5 +154,39 @@ namespace ControleAdornos
                 pnlCor.BackColor = Color.FromArgb(cor);
             }
         }
+
+        private void MontaListaLetras()
+        {
+            lstLabels = new List<Label>();
+            lstLabels.Add(letraA);
+            lstLabels.Add(letraB);
+            lstLabels.Add(letraC);
+            lstLabels.Add(letraD);
+            lstLabels.Add(letraE);
+            lstLabels.Add(letraF);
+            lstLabels.Add(letraG);
+            lstLabels.Add(letraH);
+            lstLabels.Add(letraI);
+            lstLabels.Add(letraJ);
+            lstLabels.Add(letraK);
+            lstLabels.Add(letraL);
+            lstLabels.Add(letraM);
+            lstLabels.Add(letraN);
+            lstLabels.Add(letraO);
+            lstLabels.Add(letraP);
+            lstLabels.Add(letraQ);
+            lstLabels.Add(letraR);
+            lstLabels.Add(letraS);
+            lstLabels.Add(letraT);
+            lstLabels.Add(letraU);
+            lstLabels.Add(letraV);
+            lstLabels.Add(letraW);
+            lstLabels.Add(letraX);
+            lstLabels.Add(letraY);
+            lstLabels.Add(letraZ);
+
+            lstLabels.ForEach(i => i.Text = "0");
+        }
+
     }
 }
