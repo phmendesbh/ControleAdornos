@@ -101,6 +101,7 @@ namespace ControleAdornos.Forms
             txtAcresc.Value = 0;
             btnAcresc.Enabled = false;
             pnlCor.BackColor = Color.Empty;
+            materialSelecionado = new Material();
         }
 
         private void PreencheCombo()

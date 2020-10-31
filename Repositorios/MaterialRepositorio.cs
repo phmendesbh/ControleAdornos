@@ -12,7 +12,6 @@ namespace ControleAdornos.Repositorios
     public class MaterialRepositorio : RepositorioBase, IRepos
     {
         readonly Utils utils = new Utils();
-        readonly Material_Queries Queries = new Material_Queries();
 
         public MaterialRepositorio()
         {
@@ -112,7 +111,7 @@ namespace ControleAdornos.Repositorios
         public bool AtualizaEstoqueLetras(Palavra palavra)
         {
             var letras = ObterTodasInformacoes();
-            var qtdeLetras = utils.CalculaQtdeLetras(new List<string>() { palavra.Descricao });
+            var qtdeLetras = utils.CalculaQtdeLetras(new List<string>() { palavra.Descricao});
 
             if (!ValidaQuantidadeMaterial(letras, qtdeLetras)) return false;
 
