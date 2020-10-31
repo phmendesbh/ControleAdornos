@@ -10,9 +10,7 @@ namespace ControleAdornos.Forms
         {
             InitializeComponent();
 
-#if DEBUG
             RepositorioMontaDados montaDados = new RepositorioMontaDados();
-#endif
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
