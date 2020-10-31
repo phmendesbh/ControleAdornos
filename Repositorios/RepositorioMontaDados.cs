@@ -6,9 +6,11 @@ namespace ControleAdornos.Repositorios
     {
         public RepositorioMontaDados()
         {
-            VerificaInsereCores();
             VerificaInsereTipo_Material();
+#if DEBUG
+            VerificaInsereCores();
             VerificaInsereTodasAsLetras();
+#endif
         }
 
         private void VerificaInsereCores()

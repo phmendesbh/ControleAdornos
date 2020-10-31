@@ -218,11 +218,11 @@
             this.dgvPalavras.ReadOnly = true;
             this.dgvPalavras.Size = new System.Drawing.Size(488, 320);
             this.dgvPalavras.TabIndex = 11;
-            this.dgvPalavras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMateriais_CellClick);
+            this.dgvPalavras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPalavras_CellClick);
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.letraZ);
             this.panel2.Controls.Add(this.label53);
@@ -283,7 +283,7 @@
             // 
             // letraZ
             // 
-            this.letraZ.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraZ.BackColor = System.Drawing.SystemColors.Control;
             this.letraZ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraZ.Location = new System.Drawing.Point(316, 52);
             this.letraZ.Name = "letraZ";
@@ -294,16 +294,16 @@
             // 
             // label53
             // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(302, 52);
+            this.label53.Location = new System.Drawing.Point(294, 52);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(14, 15);
+            this.label53.Size = new System.Drawing.Size(20, 15);
             this.label53.TabIndex = 0;
             this.label53.Text = "Z";
+            this.label53.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraY
             // 
-            this.letraY.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraY.BackColor = System.Drawing.SystemColors.Control;
             this.letraY.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraY.Location = new System.Drawing.Point(257, 52);
             this.letraY.Name = "letraY";
@@ -314,16 +314,16 @@
             // 
             // label51
             // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(243, 52);
+            this.label51.Location = new System.Drawing.Point(235, 52);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(14, 15);
+            this.label51.Size = new System.Drawing.Size(20, 15);
             this.label51.TabIndex = 0;
             this.label51.Text = "Y";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraX
             // 
-            this.letraX.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraX.BackColor = System.Drawing.SystemColors.Control;
             this.letraX.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraX.Location = new System.Drawing.Point(198, 52);
             this.letraX.Name = "letraX";
@@ -334,16 +334,16 @@
             // 
             // label49
             // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(184, 52);
+            this.label49.Location = new System.Drawing.Point(176, 52);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(14, 15);
+            this.label49.Size = new System.Drawing.Size(20, 15);
             this.label49.TabIndex = 0;
             this.label49.Text = "X";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraW
             // 
-            this.letraW.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraW.BackColor = System.Drawing.SystemColors.Control;
             this.letraW.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraW.Location = new System.Drawing.Point(139, 52);
             this.letraW.Name = "letraW";
@@ -354,16 +354,16 @@
             // 
             // label47
             // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(125, 52);
+            this.label47.Location = new System.Drawing.Point(117, 52);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(18, 15);
+            this.label47.Size = new System.Drawing.Size(20, 15);
             this.label47.TabIndex = 0;
             this.label47.Text = "W";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraV
             // 
-            this.letraV.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraV.BackColor = System.Drawing.SystemColors.Control;
             this.letraV.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraV.Location = new System.Drawing.Point(80, 52);
             this.letraV.Name = "letraV";
@@ -374,16 +374,16 @@
             // 
             // label45
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(66, 52);
+            this.label45.Location = new System.Drawing.Point(58, 52);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(14, 15);
+            this.label45.Size = new System.Drawing.Size(20, 15);
             this.label45.TabIndex = 0;
             this.label45.Text = "V";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraU
             // 
-            this.letraU.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraU.BackColor = System.Drawing.SystemColors.Control;
             this.letraU.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraU.Location = new System.Drawing.Point(23, 52);
             this.letraU.Name = "letraU";
@@ -394,16 +394,16 @@
             // 
             // label43
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(9, 52);
+            this.label43.Location = new System.Drawing.Point(1, 52);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(15, 15);
+            this.label43.Size = new System.Drawing.Size(20, 15);
             this.label43.TabIndex = 0;
             this.label43.Text = "U";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraT
             // 
-            this.letraT.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraT.BackColor = System.Drawing.SystemColors.Control;
             this.letraT.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraT.Location = new System.Drawing.Point(316, 37);
             this.letraT.Name = "letraT";
@@ -414,16 +414,16 @@
             // 
             // label41
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(302, 35);
+            this.label41.Location = new System.Drawing.Point(294, 35);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(13, 15);
+            this.label41.Size = new System.Drawing.Size(20, 15);
             this.label41.TabIndex = 0;
             this.label41.Text = "T";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraS
             // 
-            this.letraS.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraS.BackColor = System.Drawing.SystemColors.Control;
             this.letraS.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraS.Location = new System.Drawing.Point(257, 37);
             this.letraS.Name = "letraS";
@@ -434,16 +434,16 @@
             // 
             // label39
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(243, 35);
+            this.label39.Location = new System.Drawing.Point(235, 35);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(13, 15);
+            this.label39.Size = new System.Drawing.Size(20, 15);
             this.label39.TabIndex = 0;
             this.label39.Text = "S";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraR
             // 
-            this.letraR.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraR.BackColor = System.Drawing.SystemColors.Control;
             this.letraR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraR.Location = new System.Drawing.Point(198, 37);
             this.letraR.Name = "letraR";
@@ -454,16 +454,16 @@
             // 
             // label37
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(183, 36);
+            this.label37.Location = new System.Drawing.Point(175, 36);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(14, 15);
+            this.label37.Size = new System.Drawing.Size(20, 15);
             this.label37.TabIndex = 0;
             this.label37.Text = "R";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraQ
             // 
-            this.letraQ.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraQ.BackColor = System.Drawing.SystemColors.Control;
             this.letraQ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraQ.Location = new System.Drawing.Point(139, 37);
             this.letraQ.Name = "letraQ";
@@ -474,16 +474,16 @@
             // 
             // label35
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(125, 35);
+            this.label35.Location = new System.Drawing.Point(117, 35);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(16, 15);
+            this.label35.Size = new System.Drawing.Size(20, 15);
             this.label35.TabIndex = 0;
             this.label35.Text = "Q";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraP
             // 
-            this.letraP.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraP.BackColor = System.Drawing.SystemColors.Control;
             this.letraP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraP.Location = new System.Drawing.Point(23, 37);
             this.letraP.Name = "letraP";
@@ -494,16 +494,16 @@
             // 
             // label33
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(9, 36);
+            this.label33.Location = new System.Drawing.Point(1, 36);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(14, 15);
+            this.label33.Size = new System.Drawing.Size(20, 15);
             this.label33.TabIndex = 0;
             this.label33.Text = "P";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraO
             // 
-            this.letraO.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraO.BackColor = System.Drawing.SystemColors.Control;
             this.letraO.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraO.Location = new System.Drawing.Point(80, 37);
             this.letraO.Name = "letraO";
@@ -514,16 +514,16 @@
             // 
             // label31
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(66, 35);
+            this.label31.Location = new System.Drawing.Point(58, 35);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(16, 15);
+            this.label31.Size = new System.Drawing.Size(20, 15);
             this.label31.TabIndex = 0;
             this.label31.Text = "O";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraN
             // 
-            this.letraN.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraN.BackColor = System.Drawing.SystemColors.Control;
             this.letraN.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraN.Location = new System.Drawing.Point(375, 21);
             this.letraN.Name = "letraN";
@@ -534,16 +534,16 @@
             // 
             // label29
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(361, 20);
+            this.label29.Location = new System.Drawing.Point(353, 20);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(16, 15);
+            this.label29.Size = new System.Drawing.Size(20, 15);
             this.label29.TabIndex = 0;
             this.label29.Text = "N";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraM
             // 
-            this.letraM.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraM.BackColor = System.Drawing.SystemColors.Control;
             this.letraM.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraM.Location = new System.Drawing.Point(316, 21);
             this.letraM.Name = "letraM";
@@ -554,16 +554,16 @@
             // 
             // label27
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(302, 21);
+            this.label27.Location = new System.Drawing.Point(294, 21);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(18, 15);
+            this.label27.Size = new System.Drawing.Size(20, 15);
             this.label27.TabIndex = 0;
             this.label27.Text = "M";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraL
             // 
-            this.letraL.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraL.BackColor = System.Drawing.SystemColors.Control;
             this.letraL.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraL.Location = new System.Drawing.Point(257, 21);
             this.letraL.Name = "letraL";
@@ -574,16 +574,16 @@
             // 
             // label25
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(243, 20);
+            this.label25.Location = new System.Drawing.Point(235, 20);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(13, 15);
+            this.label25.Size = new System.Drawing.Size(20, 15);
             this.label25.TabIndex = 0;
             this.label25.Text = "L";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraK
             // 
-            this.letraK.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraK.BackColor = System.Drawing.SystemColors.Control;
             this.letraK.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraK.Location = new System.Drawing.Point(198, 20);
             this.letraK.Name = "letraK";
@@ -594,16 +594,16 @@
             // 
             // label23
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(184, 20);
+            this.label23.Location = new System.Drawing.Point(176, 20);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(14, 15);
+            this.label23.Size = new System.Drawing.Size(20, 15);
             this.label23.TabIndex = 0;
             this.label23.Text = "K";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraJ
             // 
-            this.letraJ.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraJ.BackColor = System.Drawing.SystemColors.Control;
             this.letraJ.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraJ.Location = new System.Drawing.Point(139, 21);
             this.letraJ.Name = "letraJ";
@@ -614,16 +614,16 @@
             // 
             // label21
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(125, 20);
+            this.label21.Location = new System.Drawing.Point(117, 20);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(11, 15);
+            this.label21.Size = new System.Drawing.Size(20, 15);
             this.label21.TabIndex = 0;
             this.label21.Text = "J";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraI
             // 
-            this.letraI.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraI.BackColor = System.Drawing.SystemColors.Control;
             this.letraI.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraI.Location = new System.Drawing.Point(80, 20);
             this.letraI.Name = "letraI";
@@ -634,16 +634,16 @@
             // 
             // label19
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(66, 20);
+            this.label19.Location = new System.Drawing.Point(58, 20);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(10, 15);
+            this.label19.Size = new System.Drawing.Size(20, 15);
             this.label19.TabIndex = 0;
             this.label19.Text = "I";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraH
             // 
-            this.letraH.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraH.BackColor = System.Drawing.SystemColors.Control;
             this.letraH.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraH.Location = new System.Drawing.Point(23, 21);
             this.letraH.Name = "letraH";
@@ -654,16 +654,16 @@
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(9, 21);
+            this.label17.Location = new System.Drawing.Point(1, 21);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(16, 15);
+            this.label17.Size = new System.Drawing.Size(20, 15);
             this.label17.TabIndex = 0;
             this.label17.Text = "H";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraG
             // 
-            this.letraG.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraG.BackColor = System.Drawing.SystemColors.Control;
             this.letraG.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraG.Location = new System.Drawing.Point(375, 5);
             this.letraG.Name = "letraG";
@@ -674,16 +674,16 @@
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(361, 5);
+            this.label15.Location = new System.Drawing.Point(353, 5);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 15);
+            this.label15.Size = new System.Drawing.Size(20, 15);
             this.label15.TabIndex = 0;
             this.label15.Text = "G";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraF
             // 
-            this.letraF.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraF.BackColor = System.Drawing.SystemColors.Control;
             this.letraF.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraF.Location = new System.Drawing.Point(316, 5);
             this.letraF.Name = "letraF";
@@ -694,16 +694,16 @@
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(302, 5);
+            this.label13.Location = new System.Drawing.Point(294, 5);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(13, 15);
+            this.label13.Size = new System.Drawing.Size(20, 15);
             this.label13.TabIndex = 0;
             this.label13.Text = "F";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraE
             // 
-            this.letraE.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraE.BackColor = System.Drawing.SystemColors.Control;
             this.letraE.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraE.Location = new System.Drawing.Point(257, 5);
             this.letraE.Name = "letraE";
@@ -714,16 +714,16 @@
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(243, 6);
+            this.label11.Location = new System.Drawing.Point(235, 6);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 15);
+            this.label11.Size = new System.Drawing.Size(20, 15);
             this.label11.TabIndex = 0;
             this.label11.Text = "E";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraD
             // 
-            this.letraD.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraD.BackColor = System.Drawing.SystemColors.Control;
             this.letraD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraD.Location = new System.Drawing.Point(198, 5);
             this.letraD.Name = "letraD";
@@ -734,16 +734,16 @@
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(184, 5);
+            this.label9.Location = new System.Drawing.Point(176, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(15, 15);
+            this.label9.Size = new System.Drawing.Size(20, 15);
             this.label9.TabIndex = 0;
             this.label9.Text = "D";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraC
             // 
-            this.letraC.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraC.BackColor = System.Drawing.SystemColors.Control;
             this.letraC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraC.Location = new System.Drawing.Point(139, 5);
             this.letraC.Name = "letraC";
@@ -754,16 +754,16 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(125, 5);
+            this.label7.Location = new System.Drawing.Point(117, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 15);
+            this.label7.Size = new System.Drawing.Size(20, 15);
             this.label7.TabIndex = 0;
             this.label7.Text = "C";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraB
             // 
-            this.letraB.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraB.BackColor = System.Drawing.SystemColors.Control;
             this.letraB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraB.Location = new System.Drawing.Point(80, 5);
             this.letraB.Name = "letraB";
@@ -774,16 +774,16 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(66, 5);
+            this.label5.Location = new System.Drawing.Point(58, 5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(14, 15);
+            this.label5.Size = new System.Drawing.Size(20, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "B";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // letraA
             // 
-            this.letraA.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.letraA.BackColor = System.Drawing.SystemColors.Control;
             this.letraA.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.letraA.Location = new System.Drawing.Point(23, 5);
             this.letraA.Name = "letraA";
@@ -794,12 +794,12 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 5);
+            this.label3.Location = new System.Drawing.Point(1, 5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 15);
+            this.label3.Size = new System.Drawing.Size(20, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "A";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // FrmPalavras
             // 
@@ -820,7 +820,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPalavras)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

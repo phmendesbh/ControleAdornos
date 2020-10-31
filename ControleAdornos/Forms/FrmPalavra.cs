@@ -19,7 +19,7 @@ namespace ControleAdornos
         private List<Cor> cores;
         private List<Label> lstLabels;
 
-        public string palavraSelecionada { get; private set; }
+        public Palavra palavraSelecionada { get; private set; }
 
         public FrmPalavras()
         {
@@ -44,19 +44,52 @@ namespace ControleAdornos
 
         private void AtualizaTela()
         {
-            lstPalavras = PalavraRepositorio.Obter().ToList();
+            lstPalavras = PalavraRepositorio.Obter();
             List<string> lista = lstPalavras.Select(palavra => palavra.Descricao).ToList();
-
-            dgvPalavras.DataSource = PalavraRepositorio.Obter();
-            dgvPalavras.Columns["Id"].Visible = false;
-            dgvPalavras.Columns["DescricaoAntiga"].Visible = false;
-
 
             txtPalavra.Text = "";
             lblTotal.Text = $"Total: {lstPalavras.Count()}";
 
             PreencheCombo();
             AtualizaContagemLetras(lista);
+
+            MontaGrid(lstPalavras);
+
+            palavraSelecionada = new Palavra();
+        }
+
+        private void MontaGrid(List<Palavra> lstPalavras)
+        {
+            var listaGrid = lstPalavras.Select(p => new { p.Id, Palavra = p.Descricao, Cor = p.Cor.Descricao, Cor_Id = p.Cor.Id, Cor_ValorARGB = p.Cor.ValorARBG }).ToList();
+
+            dgvPalavras.DataSource = listaGrid;
+            dgvPalavras.Columns["Id"].Visible = false;
+            dgvPalavras.Columns["Cor_Id"].Visible = false;
+            dgvPalavras.Columns["Cor_ValorARGB"].Visible = false;
+        }
+
+        private void dgvPalavras_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            AtualizaObjetos();
+        }
+
+        private void AtualizaObjetos()
+        {
+            palavraSelecionada = new Palavra()
+            {
+                Id = (int)dgvPalavras.Rows[dgvPalavras.CurrentCell.RowIndex].Cells["Id"].Value,
+                Descricao = dgvPalavras.Rows[dgvPalavras.CurrentCell.RowIndex].Cells["Palavra"].Value.ToString(),
+                Cor = new Cor()
+                {
+                    Id = (int)dgvPalavras.Rows[dgvPalavras.CurrentCell.RowIndex].Cells["Cor_Id"].Value
+                }
+            };
+
+            txtPalavra.Text = palavraSelecionada.Descricao;
+            cmbCores.SelectedValue = palavraSelecionada.Cor.Id;
+            var corSelecionada = (int)cores.Where(w => w.Id == palavraSelecionada.Cor.Id)
+                                            .Select(s => s.ValorARBG).FirstOrDefault();
+            pnlCor.BackColor = Color.FromArgb(corSelecionada);
         }
 
         private void AtualizaContagemLetras(List<string> palavras)
@@ -72,15 +105,23 @@ namespace ControleAdornos
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            var palavra = txtPalavra.Text.ToUpper();
+            var palavra = new Palavra()
+            {
+                Id = null,
+                Descricao = txtPalavra.Text.ToUpper(),
+                Cor = new Cor()
+                {
+                    Id = (int)cmbCores.SelectedValue
+                }
+            };
 
-            if (palavra == string.Empty) return;
+            if (palavra.Descricao == string.Empty) return;
 
-            var retorno = MessageBox.Show($"Confirma inclusão da palavra '{palavra}' ?", "Adicionar", MessageBoxButtons.YesNo);
+            var retorno = MessageBox.Show(ResourceMensagensPadrao.CONFIRMA_INCLUSAO, "Adicionar", MessageBoxButtons.YesNo);
 
             if (retorno == DialogResult.Yes)
             {
-                if (MaterialRepositorio.AtualizaEstoqueLetras(new Palavra(null, palavra)))
+                if (MaterialRepositorio.AtualizaEstoqueLetras(palavra))
                 {
                     PalavraRepositorio.Inserir(palavra);
                     AtualizaTela();
@@ -94,49 +135,35 @@ namespace ControleAdornos
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            var palavraApagar = palavraSelecionada;
+            var palavraApagar = palavraSelecionada.Descricao;
             if (string.IsNullOrWhiteSpace(palavraApagar)) return;
 
-            var retorno = MessageBox.Show($"Confirma remoção da palavra '{palavraApagar}' ?", "Remover", MessageBoxButtons.YesNo);
+            var retorno = MessageBox.Show($"{ResourceMensagensPadrao.CONFIRMA_REMOCAO}  Isso irá alterar o estoque de letras.", "Remover", MessageBoxButtons.YesNo);
 
             if (retorno == DialogResult.Yes)
             {
-                Palavra palavra = new Palavra(
-                    lstPalavras.Where(s => s.Descricao == palavraApagar).FirstOrDefault().Id,
-                    string.Empty)
-                {
-                    DescricaoAntiga = palavraApagar
-                };
-
-                PalavraRepositorio.Remover(palavra);
-                MaterialRepositorio.AtualizaEstoqueLetras(palavra);
+                PalavraRepositorio.Remover(palavraSelecionada);
+                MaterialRepositorio.AtualizaEstoqueLetras(palavraSelecionada);
                 AtualizaTela();
             }
-        }
-
-        private void dgvMateriais_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            AtualizaObjetos();
-        }
-
-        private void AtualizaObjetos()
-        {
-            palavraSelecionada = dgvPalavras.Rows[dgvPalavras.CurrentCell.RowIndex].Cells["Descricao"].Value.ToString();
-            txtPalavra.Text = palavraSelecionada;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtPalavra.Text)) return;
 
-            Palavra palavra = new Palavra(
-                lstPalavras.Where(s => s.Descricao == palavraSelecionada).FirstOrDefault().Id,
-                txtPalavra.Text.Trim())
+            Palavra palavra = new Palavra()
             {
-                DescricaoAntiga = palavraSelecionada
+                Id = lstPalavras.Where(s => s.Descricao == palavraSelecionada.Descricao).FirstOrDefault().Id,
+                Descricao = txtPalavra.Text,
+                DescricaoAntiga = palavraSelecionada.Descricao,
+                Cor = new Cor()
+                {
+                    Id = (int)cmbCores.SelectedValue
+                }
             };
 
-            var retorno = MessageBox.Show($"Confirma alteração da palavra '{palavra.DescricaoAntiga}' para '{palavra.Descricao}'? Isso irá alterar o estoque de letras.", "Alterar", MessageBoxButtons.YesNo);
+            var retorno = MessageBox.Show($"{ResourceMensagensPadrao.CONFIRMA_ALTERACAO} Isso irá alterar o estoque de letras.", "Alterar", MessageBoxButtons.YesNo);
 
             if (retorno == DialogResult.Yes)
             {
